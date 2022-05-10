@@ -8,13 +8,15 @@ module.exports = {
     react: {
       version: "detect",
     },
+    tailwindcss: { groupByResponsive: true },
   },
-  plugins: ["import", "simple-import-sort", "react-hooks", "sort-destructure-keys"],
+  plugins: ["import", "simple-import-sort", "react-hooks", "sort-destructure-keys", "tailwindcss"],
   extends: [
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:tailwindcss/recommended",
     "prettier",
   ],
   rules: {
@@ -103,7 +105,7 @@ module.exports = {
       rules: { "import/no-default-export": "off" },
     },
     {
-      files: ["./src/vite-env.d.ts"],
+      files: ["./src/vite-env.d.ts", "tailwind.config.js"],
       rules: { "@typescript-eslint/naming-convention": "off" },
     },
   ],

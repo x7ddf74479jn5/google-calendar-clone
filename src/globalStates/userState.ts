@@ -4,7 +4,7 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signInWithRedirect,
+  signInWithPopup as $signInWithPopup,
   signOut,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
@@ -20,9 +20,9 @@ const userState = atom<UserState>({
   dangerouslyAllowMutability: true,
 });
 
-export const loginWithGoogle = () => {
+export const sigInInWithGoogle = () => {
   const provider = new GoogleAuthProvider();
-  return signInWithRedirect(auth, provider);
+  return $signInWithPopup(auth, provider);
 };
 
 export const createUserWithEmailAndPassword = (email: string, password: string) => {
